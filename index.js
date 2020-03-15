@@ -1,1 +1,8 @@
-console.log("Hello World!");
+const { ApolloServer } = require('apollo-server');
+const typeDefs = require('./schema');
+
+const server = new ApolloServer({ typeDefs });
+
+server.listen().then(({ url }) => {
+    console.log(`Highlights server ready at ${url}`);
+});
